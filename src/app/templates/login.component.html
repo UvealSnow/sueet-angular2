@@ -1,0 +1,68 @@
+<nav class="navbar navbar-transparent navbar-absolute">
+    <div class="container">    
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navigation-example-2">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="#">Sueet - Login</a>
+        </div>
+        <div class="collapse navbar-collapse">       
+            
+            <ul class="nav navbar-nav navbar-right">
+                <li>
+                   <a href="#">
+                        Registro
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</nav>
+
+<div class="wrapper wrapper-full-page">
+    <div class="full-page login-page" data-color="gray" data-image="./assets/img/apartment-image.jpg" style="background-image: url(./assets/img/apartment-image.jpg); background-size: cover; background-repeat: no-repeat;">   
+        
+        <div class="content">
+            <div class="container">
+                <div class="row">                   
+                    <div class="col-md-4 col-sm-6 col-md-offset-4 col-sm-offset-3">
+                        <!-- <form method="#" action="#"> -->
+                            
+                            <div class="card">
+                                <div class="header text-center">Login</div>
+                                <div class="content">
+                                    <div class="form-group">
+                                        <label>Correo</label>
+                                        <input [(ngModel)]="user.email" type="email" placeholder="Ingresa tu Correo" class="form-control">
+                                    </div>
+                                    <div class="form-group">
+                                        <label>Contraseña</label>
+                                        <input [(ngModel)]="user.password" type="password" placeholder="Ingresa tu Contraseña" class="form-control">
+                                    </div>
+                                </div>
+                                <div class="footer text-center">
+                                    <button (click)="login()" type="submit" class="btn btn-fill btn-warning btn-wd">Login</button>
+                                </div>
+                            </div>
+                                
+                        <!-- </form> -->
+                                
+                    </div>                    
+                </div>
+            </div>
+        </div>
+      
+      <footer class="footer footer-transparent">
+            <div class="container">
+                <p class="copyright pull-right">
+                    &copy; 2017 <a href="#">Sueet</a>
+                </p>
+            </div>
+        </footer>
+
+    </div>                             
+       
+</div>
