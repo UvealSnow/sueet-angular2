@@ -1,0 +1,390 @@
+<div class="wrapper" id="wrapper">
+    <div class="sidebar" data-color="gray">
+
+        <<!-- div class="logo">
+            <a href="#" class="logo-text">
+                <img  style="height: 40px; width: 80px;" src="../assets/img/2-horizontal-gris.png" />
+            </a>
+        </div> -->
+        <div class="logo logo-mini">
+            <a href="#" class="logo-text">
+                Sueet
+            </a>
+        </div>
+
+        <div class="sidebar-wrapper">
+
+            <div class="user">
+                <div class="photo">
+                    <img src="../assets/img/andres-profile.jpg" />
+                </div>
+                <div class="info">
+                    <a data-toggle="collapse" href="#collapseExample" class="collapsed">
+                        Andres Peruyero
+                        <b class="caret"></b>
+                    </a>
+                    <div class="collapse" id="collapseExample">
+                        <ul class="nav">
+                            <li><a href="#">Mi Perfil</a></li>
+                            <li><a href="#">Editar Perfil</a></li>
+                            <li><a href="#">Configuración</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <ul class="nav">
+                <li class="active">
+                    <a href="#">
+                        <i class="pe-7s-graph1"></i>
+                        <p>Dashboard</p>
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        <i class="pe-7s-comment"></i>
+                        <p>Mensajes</p>
+                    </a>
+                </li>
+                <li>
+                    <a routerLink="/estates">
+                        <i class="pe-7s-home"></i>
+                        <p>Propiedades</p>
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        <i class="pe-7s-portfolio"></i>
+                        <p>Empresa</p>
+                    </a>
+                </li>
+                <li>
+                    <a routerLink="/logout">
+                        <i class="pe-7s-portfolio"></i>
+                        <p>Logout</p>
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="main-panel" style="overflow: auto !important;">
+        <nav class="navbar navbar-default">
+            <div class="container-fluid">
+                <div class="navbar-minimize">
+                    <button id="minimizeSidebar" class="btn btn-warning btn-fill btn-round btn-icon">
+                        <i class="fa fa-ellipsis-v visible-on-sidebar-regular"></i>
+                        <i class="fa fa-navicon visible-on-sidebar-mini"></i>
+                    </button>
+                </div>
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle" data-toggle="collapse">
+                        <span class="sr-only">Toggle navigation</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    <a class="navbar-brand" href="#">Dashboard</a>
+                </div>
+                <div class="collapse navbar-collapse">
+
+                    <form class="navbar-form navbar-left navbar-search-form" role="search">
+                        <div class="input-group">
+                            <span class="input-group-addon"><i class="fa fa-search"></i></span>
+                            <input type="text" value="" class="form-control" placeholder="Search...">
+                        </div>
+                    </form>
+
+                    <ul class="nav navbar-nav navbar-right">
+
+                        <li class="dropdown">
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                                <i class="fa fa-bell-o"></i>
+                                <span class="notification">3</span>
+                                <p class="hidden-md hidden-lg">
+                                    Notifications
+                                    <b class="caret"></b>
+                                </p>
+                            </a>
+                            <ul class="dropdown-menu">
+                                <li><a href="#">Falta</a></li>
+                                <li><a href="#">Hacer</a></li>
+                                <li><a href="#">Esto!</a></li>
+                            </ul>
+                        </li>
+
+                        <li class="dropdown dropdown-with-icons">
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                                <i class="fa fa-list"></i>
+                                <p class="hidden-md hidden-lg">
+                                    More
+                                    <b class="caret"></b>
+                                </p>
+                            </a>
+                            <ul class="dropdown-menu dropdown-with-icons">
+                                <li>
+                                    <a href="#">
+                                        <i class="pe-7s-tools"></i> Ajustes
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#">
+                                        <i class="pe-7s-help1"></i> FAQs
+                                    </a>
+                                </li>
+                                <li class="divider"></li>
+                                <li>
+                                    <a href="#" class="text-danger">
+                                        <i class="pe-7s-close-circle"></i>
+                                        Cerrar Sesión
+                                    </a>
+                                </li>
+                            </ul>
+                        </li>
+
+                    </ul>
+                </div>
+            </div>
+        </nav>
+
+
+        <div class="content">
+            <div class="container-fluid">
+
+                <div class="row">
+                    <div class="col-xs-6 col-md-3">
+                        <div class="card">
+                            <div class="header">
+                                <h4 class="title">Propiedades</h4>
+                            </div>
+                            <div class="content">
+                                <font color="#23CCEF" class="fa fa-building fa-2x"></font>
+                                <font color="#23CCEF" size="+2" class="pull-right">{{ dashboard?.estate_count }}</font>
+                            </div> 
+                        </div>
+                    </div>
+                    <div class="col-xs-6 col-md-3">
+                        <div class="card">
+                            <div class="header">
+                                <h4 class="title">Unidades</h4>
+                            </div>
+                            <div class="content">
+                                <font color="#23CCEF" class="fa fa-bed fa-2x"></font>
+                                <font color="#23CCEF" size="+2" class="pull-right">{{ dashboard?.unit_count }}</font>
+                            </div> 
+                        </div>
+                    </div>
+                    <div class="col-xs-6 col-md-3">
+                        <div class="card">
+                            <div class="header">
+                                <h4 class="title">Residentes</h4>
+                            </div>
+                            <div class="content">
+                                <font color="#23CCEF" class="fa fa-users fa-2x"></font>
+                                <font color="#23CCEF" size="+2" class="pull-right">{{ dashboard?.residents_count }}</font>
+                            </div> 
+                        </div>
+                    </div>
+                    <div class="col-xs-6 col-md-3">
+                        <div class="card">
+                            <div class="header">
+                                <h4 class="title">Empleados</h4>
+                            </div>
+                            <div class="content">
+                                <font color="#23CCEF" class="fa fa-id-card-o fa-2x"></font>
+                                <font color="#23CCEF" size="+2" class="pull-right">{{ dashboard?.employee_count }}</font>
+                            </div>                            
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col-sm-6">
+                        <div class="card">
+                            <div class="header">
+                                <h4 class="title">Tipo de Propiedad</h4>
+                                <p class="category">% Unidades Residenciales vs Comerciales</p>
+                            </div>
+                            <div class="content">
+                                <div id="chartPreferences" class="ct-chart "></div>
+                            </div>
+                            <div class="footer">
+                                <h6>Leyenda</h6>
+                                 <i class="fa fa-circle text-danger"></i> Comerciales
+                                 <i class="fa fa-circle text-info"></i> Residenciales
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-sm-6">
+                        <div class="card">
+                            <div class="header">
+                                <h4 class="title">Balance de Cuotas</h4>
+                                <p class="category">% Cuotas vencidas vs Cuotas al corriente</p>
+                            </div>
+                            <div class="content">
+                                <div id="chartPreferences2" class="ct-chart "></div>
+                            </div>
+                            <div class="footer">
+                                <h6>Leyenda</h6>
+                                 <i class="fa fa-circle text-danger"></i> Comerciales
+                                 <i class="fa fa-circle text-info"></i> Residenciales
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col-lg-6">
+                        <div class="card">
+                            <div class="header">
+                                <h4 class="title">Solicitudes Activas</h4>
+                                <p class="category">Pendientes por resolver</p>
+                            </div>
+                            <div class="content table-responsive table-full-width">
+                                <table class="table">
+                                    <thead>
+                                        <tr>
+                                            <th class="text-center">#</th>
+                                            <th class="text-center">Res/Unidad</th>
+                                            <th class="text-center">Propiedad</th>
+                                            <th class="text-center">Tipo</th>
+                                            <th class="text-center">Abrir</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td class="text-center">1</td>
+                                            <td class="text-center">Juan Pérez - 8211</td>
+                                            <td class="text-center">Torre MX</td>
+                                            <td class="text-center">Mantenimiento</td>
+                                            <td class="td-actions text-center">
+                                                <a href="#" rel="tooltip" title="Abrir" class="btn btn-success btn-simple btn-xs">
+                                                    <i class="fa fa-edit"></i>
+                                                </a>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td class="text-center">2</td>
+                                            <td class="text-center">Erica Gómez - 14</td>
+                                            <td class="text-center">Masaryk #326</td>
+                                            <td class="text-center">Accesos</td>
+                                            <td class="td-actions text-center">
+                                                <a href="#" rel="tooltip" title="Abrir" class="btn btn-success btn-simple btn-xs">
+                                                    <i class="fa fa-edit"></i>
+                                                </a>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td class="text-center">3</td>
+                                            <td class="text-center">Oscar Torres - A16</td>
+                                            <td class="text-center">Torre Polanco</td>
+                                            <td class="text-center">Paquetería</td>
+                                            <td class="td-actions text-center">
+                                                <a href="#" rel="tooltip" title="Abrir" class="btn btn-success btn-simple btn-xs">
+                                                    <i class="fa fa-edit"></i>
+                                                </a>
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-6">
+                        <div class="card">
+                            <div class="header">
+                                <h4 class="title">Eventos Programados</h4>
+                            </div>
+                            <div class="content table-responsive table-full-width">
+                                <table class="table">
+                                    <thead>
+                                        <tr>
+                                            <th class="text-center">#</th>
+                                            <th class="text-center">Evento</th>
+                                            <th class="text-center">Propiedad</th>
+                                            <th class="text-center">Fecha</th>
+                                            <th class="text-center">Editar</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td class="text-center">1</td>
+                                            <td class="text-center">Rosca de Reyes</td>
+                                            <td class="text-center">Torre MX</td>
+                                            <td class="text-center">06/01/17</td>
+                                            <td class="td-actions text-center">
+                                                <a href="#" rel="tooltip" title="Editar" class="btn btn-success btn-simple btn-xs">
+                                                    <i class="fa fa-edit"></i>
+                                                </a>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td class="text-center">2</td>
+                                            <td class="text-center">Junta de Consejo</td>
+                                            <td class="text-center">Torre Polanco</td>
+                                            <td class="text-center">08/01/17</td>
+                                            <td class="td-actions text-center">
+                                                <a href="#" rel="tooltip" title="Editar" class="btn btn-success btn-simple btn-xs">
+                                                    <i class="fa fa-edit"></i>
+                                                </a>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td class="text-center">3</td>
+                                            <td class="text-center">Manto. Elevador</td>
+                                            <td class="text-center">Masaryk #326</td>
+                                            <td class="text-center">11/01/17</td>
+                                            <td class="td-actions text-center">
+                                                <a href="#" rel="tooltip" title="Editar" class="btn btn-success btn-simple btn-xs">
+                                                    <i class="fa fa-edit"></i>
+                                                </a>
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+
+        <footer class="footer">
+            <div class="container-fluid">
+                <nav class="pull-left">
+                    <ul>
+                        <li>
+                            <a href="#">
+                                Inicio
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#">
+                                Mensajes
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#">
+                                Propiedades
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#">
+                                Empresa
+                            </a>
+                        </li>
+
+                        <!--  Agregar más links si se ocupan  -->
+                    </ul>
+                </nav>
+                <p class="copyright pull-right">
+                    &copy; 2017 <a href="#">Sueet</a>
+                </p>
+            </div>
+        </footer>
+
+    </div>
+
+</div>

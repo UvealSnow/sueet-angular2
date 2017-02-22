@@ -20,16 +20,16 @@ export class LoginComponent implements OnInit {
 	public user: User = { email: null, password: null };
 	public token: Token;
 
-	constructor(private _http: Http, private http: HttpService, private _cookie: CookieService) {  }
+	constructor(private _http: Http, private http: HttpService, private _cookie: CookieService, private _router: Router) {  }
 
 	ngOnInit(): void {
-		this.token = this._cookie.getObject('token');
+		// this.token = this._cookie.getObject('token');
 		// if (this.token != undefined) console.log(this.token);
 	}
 
 	login(): void {
 
-		console.log(this.user);
+		// console.log(this.user);
 
 		const formData = new FormData();
 		formData.append("grant_type", 'password');
@@ -44,6 +44,8 @@ export class LoginComponent implements OnInit {
 			.subscribe(data => {
 				this.token = data;
 				this._cookie.putObject('token', this.token);
+				// console.log(this._cookie.getObject('token'));
+				this._router.navigateByUrl('/dashboad');
 			},
 			err => {
 				this.handleError(err);

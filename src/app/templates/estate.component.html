@@ -1,0 +1,238 @@
+<div class="wrapper">
+    <div class="sidebar" data-color="gray" data-image="../assets/img/apartment-image.jpg">
+
+        <div class="logo">
+            <a href="#" class="logo-text">
+                <img  style="height: 40px; width: 80px;" src="../assets/img/2-horizontal-gris.png" />
+            </a>
+        </div>
+		<div class="logo logo-mini">
+			<a href="#" class="logo-text">
+				Sueet
+			</a>
+		</div>
+
+    	<div class="sidebar-wrapper">
+
+            <div class="user">
+                <div class="photo">
+                    <img src="../assets/img/andres-profile.jpg" />
+                </div>
+                <div class="info">
+                    <a data-toggle="collapse" href="#collapseExample" class="collapsed">
+                        Andres Peruyero
+                        <b class="caret"></b>
+                    </a>
+                    <div class="collapse" id="collapseExample">
+                        <ul class="nav">
+                            <li><a href="#">Mi Perfil</a></li>
+                            <li><a href="#">Editar Perfil</a></li>
+                            <li><a href="#">Configuración</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <ul class="nav">
+                <li class="active">
+                    <a href="#">
+                        <i class="pe-7s-graph1"></i>
+                        <p>Dashboard</p>
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        <i class="pe-7s-comment"></i>
+                        <p>Mensajes</p>
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        <i class="pe-7s-home"></i>
+                        <p>Propiedades</p>
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        <i class="pe-7s-portfolio"></i>
+                        <p>Empresa</p>
+                    </a>
+                </li>
+            </ul>
+    	</div>
+    </div>
+
+    <div class="main-panel" style="overflow: auto !important;">
+        <nav class="navbar navbar-default">
+            <div class="container-fluid">
+				<div class="navbar-minimize">
+					<button id="minimizeSidebar" class="btn btn-warning btn-fill btn-round btn-icon">
+						<i class="fa fa-ellipsis-v visible-on-sidebar-regular"></i>
+						<i class="fa fa-navicon visible-on-sidebar-mini"></i>
+					</button>
+				</div>
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle" data-toggle="collapse">
+                        <span class="sr-only">Toggle navigation</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    <a class="navbar-brand" href="#">Propiedades</a>
+                </div>
+                <div class="collapse navbar-collapse">
+
+                    <form class="navbar-form navbar-left navbar-search-form" role="search">
+                        <div class="input-group">
+                            <span class="input-group-addon"><i class="fa fa-search"></i></span>
+                            <input type="text" value="" class="form-control" placeholder="Search...">
+                        </div>
+                    </form>
+
+                    <ul class="nav navbar-nav navbar-right">
+
+                        <li class="dropdown">
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                                <i class="fa fa-bell-o"></i>
+                                <span class="notification">3</span>
+                                <p class="hidden-md hidden-lg">
+    								Notifications
+    								<b class="caret"></b>
+    							</p>
+                            </a>
+                            <ul class="dropdown-menu">
+                                <li><a href="#">Falta</a></li>
+                                <li><a href="#">Hacer</a></li>
+                                <li><a href="#">Esto!</a></li>
+                            </ul>
+                        </li>
+
+                        <li class="dropdown dropdown-with-icons">
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                                <i class="fa fa-list"></i>
+                                <p class="hidden-md hidden-lg">
+    								More
+    								<b class="caret"></b>
+    							</p>
+                            </a>
+                            <ul class="dropdown-menu dropdown-with-icons">
+                                <li>
+                                    <a href="#">
+                                        <i class="pe-7s-tools"></i> Ajustes
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#">
+                                        <i class="pe-7s-help1"></i> FAQs
+                                    </a>
+                                </li>
+                                <li class="divider"></li>
+                                <li>
+                                    <a href="#" class="text-danger">
+                                        <i class="pe-7s-close-circle"></i>
+                                        Cerrar Sesión
+                                    </a>
+                                </li>
+                            </ul>
+                        </li>
+
+                    </ul>
+                </div>
+            </div>
+        </nav>
+
+        <div class="content">
+            <div class="container-fluid">
+
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="card">
+                            <div class="header">
+                                <button class="btn btn-wd">Agregar Propiedad</button>
+                                <button class="btn btn-danger btn-fill btn-wd">Todas las Propiedades</button>
+                                <button class="btn btn-wd btn-info pull-right">Ver Mapa</button>
+                                <br />
+                            </div>
+                            <div class="content table-responsive table-full-width">
+                                <table class="table table-bigboy">
+                                    <!-- to do: fix spacing in this table -->
+                                    <thead>
+                                        <tr>
+                                            <th class="text-center">Imagen</th>
+                                            <th class="text-center">Nombre</th>
+                                            <th class="text-center">Dirección</th>
+                                            <th class="text-center">Responsable</th>
+                                            <th class="text-center">Acción</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+
+                                        <tr *ngFor="let estate of estates" (click)="onSelect(estate)" style="cursor: pointer;">
+                                            <td>
+                                                <div class="img-container">
+                                                    <img src="../assets/img/prop-1.jpg" alt="Propiedad 1">
+                                                </div>
+                                            </td>
+                                            <td class="text-center td-name">
+                                                <p >{{ estate?.name }}</p>
+                                            </td>
+                                            <td>
+                                                {{ estate?.street }} {{ estate?.ext_number }}
+                                            </td>
+                                            <td class="td-number">{{ estate?.manager?.name }}</td>
+                                            <td class="td-actions">
+                                                <button type="button" rel="tooltip" data-placement="left" title="Editar" class="btn btn-success btn-simple btn-icon">
+                                                    <i class="fa fa-edit"></i>
+                                                </button>
+                                                <button type="button" rel="tooltip" data-placement="left" title="Borrar" class="btn btn-danger btn-simple btn-icon ">
+                                                    <i class="fa fa-times"></i>
+                                                </button>
+                                            </td>
+                                        </tr>
+
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div><!--  end card  -->
+                    </div> <!-- end col-md-12 -->
+                </div>
+
+            </div>
+        </div>
+
+
+        <footer class="footer">
+            <div class="container-fluid">
+                <nav class="pull-left">
+                    <ul>
+                        <li>
+                            <a href="#">
+                                Inicio
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#">
+                                Mensajes
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#">
+                                Propiedades
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#">
+                                Empresa
+                            </a>
+                        </li>
+                        <!--  Agregar más links si se ocupan  -->
+                    </ul>
+                </nav>
+                <p class="copyright pull-right">
+                    &copy; 2017 <a href="#">Sueet</a>
+                </p>
+            </div>
+        </footer>
+
+    </div>
+</div>
