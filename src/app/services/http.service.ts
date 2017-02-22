@@ -9,7 +9,7 @@ import { Token } from '../classes/token';
 
 @Injectable() 
 export class HttpService {
-	private apiUrl = 'http://localhost:8000/api';
+	private apiUrl = 'http://sueetapi.herokuapp.com/api';
 	public token: any;
 	public data: any;
 
@@ -62,7 +62,7 @@ export class HttpService {
 			api_headers.append('Authorization', 'Bearer ' + this.token.access_token);
 			return api_headers;	
 		}
-		return false;
+		// return false;
 	}
 
 }

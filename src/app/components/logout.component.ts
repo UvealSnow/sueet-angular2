@@ -20,4 +20,8 @@ export class LogoutComponent implements OnInit, AfterViewInit {
 		this._cookie.remove('token');
 	}
 
+	ngAfterViewInit(): void {
+		
+	}
+
 }

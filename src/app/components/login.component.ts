@@ -16,7 +16,7 @@ import { Token } from '../classes/token';
 })
 
 export class LoginComponent implements OnInit { 
-	private loginUrl = 'http://localhost:8000/oauth/token';
+	private loginUrl = 'http://sueetapi.herokuapp.com/oauth/token';
 	public user: User = { email: null, password: null };
 	public token: Token;
 
@@ -34,7 +34,7 @@ export class LoginComponent implements OnInit {
 		const formData = new FormData();
 		formData.append("grant_type", 'password');
 		formData.append("client_id", '2');
-		formData.append("client_secret", 'Oi03SsVwusAFC8KxF8tju9K1vSoMrxd7xaCbuKjb');
+		formData.append("client_secret", 'TezjWSeJXl7qGX7EjdkFzqqkRIFjUMuOcLQB2nY3');
 		formData.append("username", this.user.email);
 		formData.append("password", this.user.password);
 		formData.append("scope", '');

@@ -21,4 +21,8 @@ export class EstateShowComponent implements OnInit, AfterViewInit {
 			.then(data => { this.estates = data.estates; });
 	}
 
+	ngAfterViewInit(): void {
+		
+	}
+
 }

@@ -21,7 +21,11 @@ export class EstateComponent implements OnInit, AfterViewInit {
 			.then(data => { this.estates = data.estates; console.log(this.estates) });
 	}
 
-	onSelect (estate): void {
+	ngAfterViewInit(): void {
+
+	}
+
+	onSelect (estate: any): void {
 		// console.log(estate);
 		this._router.navigate(['/estates', estate.id]);
 	}

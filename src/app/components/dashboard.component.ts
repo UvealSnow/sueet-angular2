@@ -2,7 +2,10 @@ import { Component, OnInit, ViewChild, ElementRef, AfterViewInit } from '@angula
 import { Router, ActivatedRoute } from '@angular/router';
 import { CookieService } from 'angular2-cookie/core';
 import { HttpService } from '../services/http.service';
-declare var $:JQueryStatic;
+// import { platformBrowserDynamic } from '@angular/platform-browser-dynamic';
+// import { AppModule } from '../app.module';
+// platformBrowserDynamic().bootstrapModule(AppModule);
+// declare var $:JQueryStatic;
 
 @Component({
   selector: 'my-dashboard',
@@ -31,57 +34,57 @@ export class DashboardComponent implements OnInit, AfterViewInit {
 	}
 
 	ngAfterViewInit (): void {
-		var dataPreferences = {
-		    series: [
-		        [25, 30, 20, 25]
-		    ]
-		};
+		// var dataPreferences = {
+		//     series: [
+		//         [25, 30, 20, 25]
+		//     ]
+		// };
 
-		var optionsPreferences = {
-		    donut: true,
-		    donutWidth: 40,
-		    startAngle: 0,
-		    height: "245px",
-		    total: 100,
-		    showLabel: false,
-		    axisX: {
-		        showGrid: false
-		    }
-		};
+		// var optionsPreferences = {
+		//     donut: true,
+		//     donutWidth: 40,
+		//     startAngle: 0,
+		//     height: "245px",
+		//     total: 100,
+		//     showLabel: false,
+		//     axisX: {
+		//         showGrid: false
+		//     }
+		// };
 
-		Chartist.Pie('#chartPreferences', dataPreferences, optionsPreferences);
+		// Chartist.Pie('#chartPreferences', dataPreferences, optionsPreferences);
 
-		Chartist.Pie('#chartPreferences', {
-		  labels: ['60%','40%'],
-		  series: [60, 40]
-		});
+		// Chartist.Pie('#chartPreferences', {
+		//   labels: ['60%','40%'],
+		//   series: [60, 40]
+		// });
 
-		/*  **************** Public Preferences - Pie Chart ******************** */
+		//   **************** Public Preferences - Pie Chart ******************** 
 
-		var dataPreferences2 = {
-		    series: [
-		        [25, 30, 20, 25]
-		    ]
-		};
+		// var dataPreferences2 = {
+		//     series: [
+		//         [25, 30, 20, 25]
+		//     ]
+		// };
 
-		var optionsPreferences2 = {
-		    donut: true,
-		    donutWidth: 40,
-		    startAngle: 0,
-		    height: "245px",
-		    total: 100,
-		    showLabel: false,
-		    axisX: {
-		        showGrid: false
-		    }
-		};
+		// var optionsPreferences2 = {
+		//     donut: true,
+		//     donutWidth: 40,
+		//     startAngle: 0,
+		//     height: "245px",
+		//     total: 100,
+		//     showLabel: false,
+		//     axisX: {
+		//         showGrid: false
+		//     }
+		// };
 
-		Chartist.Pie('#chartPreferences2', dataPreferences2, optionsPreferences2);
+		// Chartist.Pie('#chartPreferences2', dataPreferences2, optionsPreferences2);
 
-		Chartist.Pie('#chartPreferences2', {
-		  labels: ['40%','60%'],
-		  series: [40, 60]
-		});
+		// Chartist.Pie('#chartPreferences2', {
+		//   labels: ['40%','60%'],
+		//   series: [40, 60]
+		// });
 	}
 
 	logout(): void {
